@@ -2,6 +2,8 @@
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
 
+![Demonstração do dashboard credito-ia](docs/demo.gif)
+
 Agente de IA que analisa a estrutura de crédito de uma empresa (PJ), compara as taxas que ela paga com os benchmarks oficiais do Banco Central e sugere trocas de produtos de crédito para reduzir custo financeiro e melhorar o caixa.
 
 ## Stack
@@ -71,10 +73,6 @@ npm run build && npm start
 | POST | `/api/analise-credito` | Pipeline completo (ERP + BCB → Claude). Body: `{ "cnpj": "...", "pergunta": "..." }` |
 | GET | `/api/debug-contexto?cnpj=...` | Retorna o JSON que seria enviado ao Claude, sem custo de API |
 | GET | `/api/debug-omie` | Retorno cru do Omie (`ListarContasPagar`) |
-
-## Demonstração
-
-![Demonstração do dashboard credito-ia](docs/demo.gif)
 
 ## Links
 

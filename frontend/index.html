@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>credito-ia · Análise de crédito PJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F1B2B;
+    --surface: #16273D;
+    --surface-2: #1E3149;
+    --gold: #C9A227;
+    --gold-soft: #E4C766;
+    --sage: #4F9D69;
+    --rose: #B8664F;
+    --paper: #EDEAE0;
+    --slate: #8FA0B3;
+    --hairline: rgba(143, 160, 179, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+  .brand span { color: var(--gold); }
+  .timestamp {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--slate);
+    margin-bottom: 10px;
+  }
+  .hero-company {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin: 0 0 28px;
+    color: var(--paper);
+  }
+  .hero-stat {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: var(--gold-soft);
+    line-height: 1;
+    margin: 0;
+  }
+  .hero-stat-label {
+    font-size: 14px;
+    color: var(--slate);
+    margin-top: 10px;
+    max-width: 480px;
+  }
+
+  /* ---------- Section shell ---------- */
+  section { margin-top: 56px; }
+  .section-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 22px;
+    margin: 0 0 24px;
+  }
+
+  /* ---------- Ledger rows (Mapa de crédito) ---------- */
+  .ledger-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--hairline);
+    gap: 16px;
+  }
+  .ledger-row .label {
+    font-size: 14px;
+    color: var(--paper);
+  }
+  .ledger-row .meta {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    margin-top: 3px;
+  }
+  .ledger-row .value {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 15px;
+    white-space: nowrap;
+    color: var(--gold-soft);
+  }
+  .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    background: var(--surface-2);
+    color: var(--rose);
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Omie stats (fonte de dados real) ---------- */
+  .omie-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .omie-stat { min-width: 140px; }
+  .omie-stat .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--gold-soft);
+    line-height: 1.1;
+  }
+  .omie-stat .lbl {
+    font-size: 12px;
+    color: var(--slate);
+    margin-top: 6px;
+  }
+
+  /* ---------- Rate bars (comparativo BCB) ---------- */
+  .rate-block { margin-bottom: 26px; }
+  .rate-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .rate-head .name { color: var(--paper); }
+  .rate-head .figs {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--slate);
+    font-size: 12px;
+  }
+  .bar-track {
+    height: 8px;
+    background: var(--surface-2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--rose), #D98168);
+  }
+  .bar-marker {
+    position: absolute;
+    top: -3px;
+    width: 2px;
+    height: 14px;
+    background: var(--gold-soft);
+  }
+  .rate-foot {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 11px;
+    color: var(--slate);
+    margin-top: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .rate-foot .dot { color: var(--gold-soft); }
+
+  /* ---------- Recommendation cards ---------- */
+  .rec-card {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 24px;
+    margin-bottom: 18px;
+  }
+  .rec-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .rec-problem {
+    font-size: 14px;
+    color: var(--paper);
+    max-width: 520px;
+  }
+  .seal {
+    flex-shrink: 0;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 1.5px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold-soft);
+    line-height: 1.2;
+  }
+  .rec-swap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .rec-swap .from { color: var(--rose); text-decoration: line-through; text-decoration-color: rgba(184,102,79,0.5); }
+  .rec-swap .arrow { color: var(--slate); }
+  .rec-swap .to { color: var(--sage); font-weight: 600; }
+  .rec-benefit {
+    font-size: 13px;
+    color: var(--slate);
+    border-left: 2px solid var(--gold);
+    padding-left: 12px;
+  }
+
+  /* ---------- Timeline (plano de ação) ---------- */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item {
+    display: flex;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px dotted var(--hairline);
+  }
+  .tl-item:last-child { border-bottom: none; }
+  .tl-day {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--gold-soft);
+    width: 64px;
+    flex-shrink: 0;
+  }
+  .tl-text { font-size: 14px; color: var(--paper); }
+
+  /* ---------- Misc ---------- */
+  .demo-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    background: var(--surface);
+    border: 1px dashed var(--hairline);
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+  }
+  .status-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--slate);
+    margin-top: 8px;
+  }
+  .status-line.ok { color: var(--sage); }
+  .status-line.err { color: var(--rose); }
+  .status-line.warn { color: var(--gold); }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--hairline);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--slate);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 560px) {
+    .hero-stat { font-size: 44px; }
+    .rec-top { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brand">crédito<span>·</span>ia</div>
+    <div class="timestamp" id="timestamp">—</div>
+  </header>
+
+  <div class="hero-label">Análise de crédito PJ</div>
+  <h1 class="hero-company" id="companyName">Carregando empresa…</h1>
+  <p class="hero-stat" id="heroStat">R$ 200 mil</p>
+  <p class="hero-stat-label">Economia estimada em juros ao ano, comparando a estrutura de crédito atual da empresa com produtos mais adequados ao seu perfil e finalidade de uso.</p>
+  <p class="status-line" id="apiStatus">verificando conexão com o backend…</p>
+
+  <section>
+    <div class="section-eyebrow">01 — Situação atual</div>
+    <h2>Mapa de crédito</h2>
+    <div id="ledger"></div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow">02 — Fonte de dados real</div>
+    <h2>Fonte de dados real (Omie)</h2>
+    <div class="omie-stats" id="omieStats"></div>
+    <p class="status-line" id="omieStatus">verificando conexão com o Omie…</p>
+    <p class="status-line warn" id="omieNote" style="display:none"></p>
+  </section>
+
+  <section>
+    <div class="section-eyebrow">03 — Benchmark</div>
+    <h2>Comparativo com o Banco Central</h2>
+    <div id="rates"></div>
+    <div class="rate-foot"><span class="dot">│</span>&nbsp;marcador = taxa média de mercado (BCB · SGS)</div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow">04 — Recomendações</div>
+    <h2>O que trocar</h2>
+    <div class="demo-note">Exemplo gerado a partir do prompt, validado manualmente. Quando a chave da API tiver crédito, este bloco passa a vir de <code>/api/analise-credito</code> em tempo real.</div>
+    <div id="recommendations"></div>
+  </section>
+
+  <section>
+    <div class="section-eyebrow">05 — Execução</div>
+    <h2>Plano 30 · 60 · 90 dias</h2>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <footer>
+    <span>credito-ia · MVP</span>
+    <span id="sourceFooter">fonte: Banco Central do Brasil (SGS)</span>
+  </footer>
+
+</div>
+
+<script>
+const CNPJ = "12.345.678/0001-90";
+
+const DEMO = {
+  company: "Transportadora Exemplo LTDA",
+  savings: "R$ 444 mil",
+  recommendations: [
+    {
+      problem: "Uso de cheque especial/LIS como fonte recorrente de caixa, a 11,5%/mês — muito acima do benchmark do próprio produto.",
+      from: "Cheque especial / LIS · R$ 180.000",
+      to: "Capital de giro parcelado",
+      benefit: "Custo atual (juros compostos, taxa efetiva anual) ≈ R$ 484,6 mil/ano · produto recomendado (capital de giro, benchmark BCB) ≈ R$ 40,2 mil/ano → economia estimada de ~R$ 444 mil/ano",
+      confidence: "Média"
+    },
+    {
+      problem: "Ativo imobilizado (caminhão) financiado com produto genérico de crédito ao invés de linha específica para o bem.",
+      from: "CDC veículo · R$ 420.000 · 1,9%/mês",
+      to: "FINAME (BNDES)",
+      benefit: "Redução de taxa esperada + carência de até 6 meses. Depende de multa de quitação antecipada no CDC atual.",
+      confidence: "Baixa–Média"
+    }
+  ],
+  plan: [
+    { day: "30 dias", text: "Levantar taxa real negociável de capital de giro com o banco atual e concorrentes, usando o benchmark BCB como piso." },
+    { day: "60 dias", text: "Formalizar troca do cheque especial por capital de giro parcelado, com prazo e parcela definidos." },
+    { day: "90 dias", text: "Se compensar, migrar o financiamento do caminhão para FINAME com carência." }
+  ]
+};
+
+function fmtBRL(v) {
+  return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+}
+
+function renderLedger(produtos) {
+  const el = document.getElementById('ledger');
+  el.innerHTML = produtos.map(p => `
+    <div class="ledger-row">
+      <div>
+        <div class="label">${p.produto}${p.taxaMensal >= 8 ? '<span class="tag">alto custo</span>' : ''}</div>
+        <span class="meta">${p.banco} · ${p.garantia} · ${p.finalidade}</span>
+      </div>
+      <div class="value">${fmtBRL(p.saldoDevedor)}<br><span class="meta" style="text-align:right">${p.taxaMensal}%/mês</span></div>
+    </div>
+  `).join('');
+}
+
+function renderRates(produtos, benchmark) {
+  const el = document.getElementById('rates');
+  const map = [
+    { label: "Cheque especial / LIS PJ", empresa: produtos.find(p => p.produto.includes('Cheque')), bench: benchmark.chequeEspecialPJ, benchLabel: "cheque especial PJ" },
+    { label: "Capital de giro (referência)", empresa: null, bench: benchmark.capitalGiroAte365Dias, benchLabel: "capital de giro até 365d" },
+  ];
+
+  el.innerHTML = map.filter(m => m.bench).map(m => {
+    const empresaAnual = m.empresa
+      ? (Math.pow(1 + m.empresa.taxaMensal / 100, 12) - 1) * 100
+      : null;
+    const benchAnual = m.bench.valor;
+    const maxScale = Math.max(empresaAnual || 0, benchAnual) * 1.15;
+    const fillPct = empresaAnual ? Math.min(100, (empresaAnual / maxScale) * 100) : 0;
+    const markerPct = Math.min(100, (benchAnual / maxScale) * 100);
+    return `
+      <div class="rate-block">
+        <div class="rate-head">
+          <span class="name">${m.label}</span>
+          <span class="figs">${empresaAnual ? empresaAnual.toFixed(1) + '% a.a. (empresa)' : 'não utilizado'} · benchmark ${benchAnual.toFixed(1)}% a.a.</span>
+        </div>
+        <div class="bar-track">
+          ${empresaAnual ? `<div class="bar-fill" style="width:${fillPct}%"></div>` : ''}
+          <div class="bar-marker" style="left:${markerPct}%"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderRecommendations(recs) {
+  const el = document.getElementById('recommendations');
+  el.innerHTML = recs.map(r => `
+    <div class="rec-card">
+      <div class="rec-top">
+        <div class="rec-problem">${r.problem}</div>
+        <div class="seal">Confiança<br>${r.confidence}</div>
+      </div>
+      <div class="rec-swap">
+        <span class="from">${r.from}</span>
+        <span class="arrow">→</span>
+        <span class="to">${r.to}</span>
+      </div>
+      <div class="rec-benefit">${r.benefit}</div>
+    </div>
+  `).join('');
+}
+
+function statusEhVencida(status) {
+  return (status || '').toUpperCase() !== 'A VENCER';
+}
+
+function renderOmieStats(contas) {
+  const el = document.getElementById('omieStats');
+  const total = contas.reduce((soma, c) => soma + (c.valor_documento || 0), 0);
+  const vencidas = contas.filter(c => statusEhVencida(c.status_titulo)).length;
+  const aVencer = contas.length - vencidas;
+
+  el.innerHTML = `
+    <div class="omie-stat">
+      <div class="num">${contas.length}</div>
+      <div class="lbl">contas a pagar encontradas</div>
+    </div>
+    <div class="omie-stat">
+      <div class="num">${fmtBRL(total)}</div>
+      <div class="lbl">valor total em aberto</div>
+    </div>
+    <div class="omie-stat">
+      <div class="num"><span style="color:var(--rose)">${vencidas}</span> / <span style="color:var(--sage)">${aVencer}</span></div>
+      <div class="lbl">vencidas / a vencer</div>
+    </div>
+  `;
+}
+
+async function loadOmie() {
+  const statusEl = document.getElementById('omieStatus');
+  const noteEl = document.getElementById('omieNote');
+
+  try {
+    const res = await fetch('/api/debug-omie');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    renderOmieStats(data.conta_pagar_cadastro || []);
+    statusEl.textContent = 'conectado ao Omie · dados ao vivo (ListarContasPagar)';
+    statusEl.classList.add('ok');
+    noteEl.style.display = 'none';
+  } catch (err) {
+    try {
+      const res = await fetch('/omie-fallback.json');
+      if (!res.ok) throw new Error('fallback indisponível');
+      const fallback = await res.json();
+
+      renderOmieStats(fallback.dados.conta_pagar_cadastro || []);
+      statusEl.textContent = 'Omie indisponível — exibindo dados de exemplo salvos';
+      statusEl.classList.add('warn');
+
+      const dataCaptura = new Date(fallback.capturadoEm).toLocaleDateString('pt-BR');
+      noteEl.textContent = `dados capturados em ${dataCaptura} — trial do Omie pode ter expirado`;
+      noteEl.style.display = 'block';
+    } catch (err2) {
+      statusEl.textContent = 'não foi possível carregar dados do Omie (nem ao vivo, nem exemplo salvo)';
+      statusEl.classList.add('err');
+    }
+  }
+}
+
+function renderTimeline(plan) {
+  document.getElementById('timeline').innerHTML = plan.map(p => `
+    <div class="tl-item">
+      <div class="tl-day">${p.day}</div>
+      <div class="tl-text">${p.text}</div>
+    </div>
+  `).join('');
+}
+
+async function boot() {
+  document.getElementById('timestamp').textContent = new Date().toLocaleString('pt-BR');
+  document.getElementById('heroStat').textContent = DEMO.savings;
+  renderRecommendations(DEMO.recommendations);
+  renderTimeline(DEMO.plan);
+  loadOmie();
+
+  const statusEl = document.getElementById('apiStatus');
+
+  try {
+    const res = await fetch(`/api/debug-contexto?cnpj=${encodeURIComponent(CNPJ)}`);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    document.getElementById('companyName').textContent = data.dadosEmpresa.razaoSocial;
+    renderLedger(data.dadosEmpresa.produtosCreditoAtuais);
+    renderRates(data.dadosEmpresa.produtosCreditoAtuais, data.benchmarkBCB.taxas);
+
+    statusEl.textContent = `conectado ao backend · dados do Banco Central atualizados em ${new Date(data.benchmarkBCB.atualizadoEm).toLocaleDateString('pt-BR')}`;
+    statusEl.classList.add('ok');
+  } catch (err) {
+    document.getElementById('companyName').textContent = DEMO.company;
+    statusEl.textContent = 'backend offline — exibindo dados de exemplo (rode "npm run dev" para dados ao vivo)';
+    statusEl.classList.add('err');
+  }
+}
+
+boot();
+</script>
+</body>
+</html>

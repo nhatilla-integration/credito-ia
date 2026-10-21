@@ -1,0 +1,657 @@
+{
+  "capturadoEm": "2026-07-28T01:37:01.372Z",
+  "origem": "Omie API - ListarContasPagar (ambiente trial)",
+  "dados": {
+    "pagina": 1,
+    "total_de_paginas": 1,
+    "registros": 17,
+    "total_de_registros": 17,
+    "conta_pagar_cadastro": [
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689850,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "31/10/2026",
+        "data_vencimento": "31/10/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:35",
+          "hInc": "22:11:35",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "004/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689851,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "30/11/2026",
+        "data_vencimento": "30/11/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "005/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689852,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "28/12/2026",
+        "data_vencimento": "28/12/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "006/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689853,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "29/01/2027",
+        "data_vencimento": "28/01/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "007/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689854,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "27/02/2027",
+        "data_vencimento": "27/02/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "008/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689855,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "30/03/2027",
+        "data_vencimento": "30/03/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "009/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689856,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "30/04/2027",
+        "data_vencimento": "29/04/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "010/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689857,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "30/05/2027",
+        "data_vencimento": "30/05/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "011/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689858,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "02/07/2027",
+        "data_vencimento": "30/06/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "012/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.08.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.08.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689859,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "30/07/2027",
+        "data_vencimento": "30/07/2027",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "013/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.01.01",
+            "percentual": 100,
+            "valor": 654.37
+          }
+        ],
+        "chave_nfe": "35120402338823000661550010000071661999928333",
+        "codigo_categoria": "2.01.01",
+        "codigo_cliente_fornecedor": 6021689842,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689861,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "25/06/2026",
+        "data_entrada": "25/06/2026",
+        "data_previsao": "25/06/2026",
+        "data_vencimento": "25/06/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689831,
+        "id_origem": "XMLP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:36",
+          "hInc": "22:11:36",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_documento": "7166",
+        "numero_parcela": "001/001",
+        "status_titulo": "ATRASADO",
+        "valor_documento": 654.37
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689864,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "31/07/2026",
+        "data_vencimento": "31/07/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "MANP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:37",
+          "hInc": "22:11:37",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "001/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.04.06",
+            "percentual": 100,
+            "valor": 379
+          }
+        ],
+        "chave_nfe": "35120300776574000741551110000512591118308694",
+        "codigo_categoria": "2.04.06",
+        "codigo_cliente_fornecedor": 6021689840,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689866,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "14/06/2026",
+        "data_entrada": "14/06/2026",
+        "data_previsao": "14/06/2026",
+        "data_vencimento": "14/06/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689831,
+        "id_origem": "XMLP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:37",
+          "hInc": "22:11:37",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_documento": "319134740",
+        "numero_parcela": "001/001",
+        "status_titulo": "ATRASADO",
+        "valor_documento": 379
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.01.01",
+            "percentual": 100,
+            "valor": 1180.43
+          }
+        ],
+        "codigo_barras_ficha_compensacao": "40995.02124 81400.000113 98929.700387 4 42340000118043",
+        "codigo_categoria": "2.01.01",
+        "codigo_cliente_fornecedor": 6021689841,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689868,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "27/07/2026",
+        "data_vencimento": "27/06/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689830,
+        "id_origem": "BARP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:37",
+          "hInc": "22:11:37",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "001/001",
+        "status_titulo": "VENCE HOJE",
+        "valor_documento": 1180.43
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689869,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "31/08/2026",
+        "data_vencimento": "31/08/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:37",
+          "hInc": "22:11:37",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "002/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.04.07",
+            "percentual": 100,
+            "valor": 116.47
+          }
+        ],
+        "codigo_barras_ficha_compensacao": "23792.37205 90032.588817 06000.391802 8 53360000011647",
+        "codigo_categoria": "2.04.07",
+        "codigo_cliente_fornecedor": 6021689844,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689877,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "09/08/2026",
+        "data_vencimento": "09/08/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689831,
+        "id_origem": "BARP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:37",
+          "hInc": "22:11:37",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "001/001",
+        "status_titulo": "A VENCER",
+        "valor_documento": 116.47
+      },
+      {
+        "categorias": [
+          {
+            "codigo_categoria": "2.07.01",
+            "percentual": 100,
+            "valor": 2500
+          }
+        ],
+        "codigo_categoria": "2.07.01",
+        "codigo_cliente_fornecedor": 6021689845,
+        "codigo_lancamento_integracao": "",
+        "codigo_lancamento_omie": 6021689890,
+        "codigo_tipo_documento": "99999",
+        "data_emissao": "27/07/2026",
+        "data_entrada": "27/07/2026",
+        "data_previsao": "02/10/2026",
+        "data_vencimento": "30/09/2026",
+        "distribuicao": [],
+        "id_conta_corrente": 6021689832,
+        "id_origem": "RPTP",
+        "info": {
+          "cImpAPI": "N",
+          "dAlt": "27/07/2026",
+          "dInc": "27/07/2026",
+          "hAlt": "22:11:38",
+          "hInc": "22:11:38",
+          "uAlt": "P001535641",
+          "uInc": "P001535641"
+        },
+        "numero_parcela": "003/013",
+        "retem_cofins": "N",
+        "retem_csll": "N",
+        "retem_inss": "N",
+        "retem_ir": "N",
+        "retem_iss": "N",
+        "retem_pis": "N",
+        "status_titulo": "A VENCER",
+        "valor_documento": 2500
+      }
+    ]
+  }
+}

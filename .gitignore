@@ -1,0 +1,23 @@
+# Dependências e build
+node_modules/
+dist/
+
+# Variáveis de ambiente (contêm chaves reais) — só o .env.example vai pro repo
+.env
+.env.*
+!.env.example
+
+# Dumps locais de teste (o fallback usado pelo frontend fica em frontend/)
+/omie-fallback.json
+/contexto-teste.json
+
+# Logs e arquivos de sistema/editor
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Notas pessoais (não versionar)
+*.local.md
